@@ -1,0 +1,19 @@
+<h1>Extrato</h1>
+<h2><%= @client.name %></h2>
+
+<%= form_with(url: client_statements_path(@client)) do |form| %>
+  <div>
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, style: "display: block" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.submit "ver extrato" %>
+    <%= link_to "voltar", client_path(@client) %>
+  </div>
+<% end %>

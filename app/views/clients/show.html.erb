@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @client %>
+
+<div>
+  <%= link_to "Editar", edit_client_path(@client) %>
+  <%= link_to "Saldo", client_balances_path(@client) %>
+  <%= link_to "Extrato", new_client_statement_path(@client) %>
+  <%= link_to "Saque", new_client_withdrawal_path(@client) %>
+  <%= link_to "Deposito", new_client_deposit_path(@client) %>
+  <%= link_to "Transferencia", new_client_transfer_path(@client) %>
+
+  <%= button_to "Encerrar conta", @client, method: :delete %>
+</div>

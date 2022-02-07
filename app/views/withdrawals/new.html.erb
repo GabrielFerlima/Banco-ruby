@@ -1,0 +1,16 @@
+<h1>Saque</h1>
+<h2><%= @client.name %></h2>
+
+<%= form_with(url: client_withdrawals_path(@client)) do |form| %>
+  <p style="color: red"><%= @error %></p>
+
+  <div>
+    <%= form.label :value, style: "display: block" %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div>
+    <%= form.submit "fazer saque" %>
+    <%= link_to "Cancelar", client_path(@client) %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<h1>Transferencia</h1>
+
+<%= form_with(url: client_transfers_path(@client)) do |form| %>
+  <p style="color: red"><%= @error %></p>
+
+  <div>
+    <%= form.label :value, style: "display: block" %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.submit "fazer transferencia" %>
+    <%= link_to "Voltar", client_path(@client) %>
+  </div>
+<% end %>
